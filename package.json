@@ -1,0 +1,28 @@
+{
+  "name": "gulp-nightwatch",
+  "version": "0.0.0",
+  "description": "gulp plugin for Nightwatch.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tatsuyafw/gulp-nightwatch.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "nightwatch"
+  ],
+  "author": "Tatsuya Hoshino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tatsuyafw/gulp-nightwatch/issues"
+  },
+  "homepage": "https://github.com/tatsuyafw/gulp-nightwatch",
+  "dependencies": {
+    "gulp-util": "^3.0.1",
+    "nightwatch": "^0.5.35",
+    "through2": "^0.6.3"
+  }
+}
