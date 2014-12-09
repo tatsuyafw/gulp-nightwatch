@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/tatsuyafw/gulp-nightwatch",
   "dependencies": {
+    "event-stream": "^3.1.7",
     "gulp-util": "^3.0.1",
-    "nightwatch": "^0.5.35",
-    "through2": "^0.6.3"
+    "nightwatch": "^0.5.35"
   }
 }

@@ -15,11 +15,10 @@ Then, write your gulpfile.js as bellow.
 var gulp = require('gulp'),
     nightwatch = require('gulp-nightwatch');
 
-var configFile = 'nightwatch.json';
-
 gulp.task('default', function() {
-   gulp.src(configFile)
+   gulp.src()
      .pipe(nightwatch({
+       configFile: "test/nightwatch.json"
      }));
 });
 ```
