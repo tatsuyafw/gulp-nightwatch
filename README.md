@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     nightwatch = require('gulp-nightwatch');
 
 gulp.task('default', function() {
-   gulp.src()
+   gulp.src('')
      .pipe(nightwatch({
        configFile: "test/nightwatch.json"
      }));
