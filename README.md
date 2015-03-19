@@ -1,5 +1,4 @@
-gulp-nightwatch
-===============
+# gulp-nightwatch [![Build Status](https://travis-ci.org/tatsuyafw/gulp-nightwatch.svg?branch=master)](https://travis-ci.org/tatsuyafw/gulp-nightwatch)
 
 ## Usage
 
