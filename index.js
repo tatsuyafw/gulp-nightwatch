@@ -41,8 +41,7 @@ var nightwatchPlugin = function(options) {
         path.join(__dirname, 'lib', 'background.js'),
         JSON.stringify({
           config: options.configFile,
-          env: 'default',
-          output: 'output'
+          env: 'default'
         })
       ],
       {
@@ -55,6 +54,7 @@ var nightwatchPlugin = function(options) {
     });
 
   }
+
   function queueFile(file) {
     gutil.log("log file");
     if (file) {
