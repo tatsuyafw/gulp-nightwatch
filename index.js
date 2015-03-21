@@ -2,7 +2,7 @@
 
 var es = require('event-stream');
 var gutil = require('gulp-util');
-var nightwatch = require('nightwatch');
+var helper = require('./lib/helper');
 var path = require('path');
 var spawn = require('child_process').spawn;
 var PluginError = gutil.PluginError;
@@ -10,12 +10,20 @@ var PluginError = gutil.PluginError;
 var PLUGIN_NAME = 'gulp-nightwatch';
 
 var nightwatchPlugin = function(options) {
-  var child;
-  var stream;
-  var files = [];
+  var child,
+      stream,
+      files = [],
+      nightwatchOptions = {};
+
+  // Nightwatch always needs the 'env' options.
+  nightwatchOptions.env = 'default';
 
   if (options.configFile) {
-    options.configFile = path.resolve(options.configFile);
+    nightwatchOptions.config = path.resolve(options.configFile);
+  }
+
+  if (options.cliArgs) {
+    helper.merge(nightwatchOptions, helper.parseCliArgs(options.cliArgs));
   }
 
   function done(code) {
@@ -39,10 +47,7 @@ var nightwatchPlugin = function(options) {
       'node',
       [
         path.join(__dirname, 'lib', 'background.js'),
-        JSON.stringify({
-          config: options.configFile,
-          env: 'default'
-        })
+        JSON.stringify(nightwatchOptions) // Nightwatch args
       ],
       {
         stdio: 'inherit'
