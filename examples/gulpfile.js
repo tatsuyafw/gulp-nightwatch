@@ -7,3 +7,27 @@ gulp.task('default', function() {
       configFile: 'nightwatch.json'
     }));
 });
+
+gulp.task('withNoOptions', function() {
+  gulp.src('')
+    .pipe(nightwatch());
+});
+
+gulp.task('withCliArgs:array', function() {
+  gulp.src('')
+    .pipe(nightwatch({
+      configFile: 'nightwatch.json',
+      cliArgs: [ '--env chrome', '--tag sandbox' ]
+    }));
+});
+
+gulp.task('withCliArgs:object', function() {
+  gulp.src('')
+    .pipe(nightwatch({
+      configFile: 'nightwatch.json',
+      cliArgs: {
+        env: 'chrome',
+        tag: 'sandbox'
+      }
+    }));
+});
