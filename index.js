@@ -13,13 +13,16 @@ var nightwatchPlugin = function(options) {
   var child,
       stream,
       files = [],
-      nightwatchOptions = {};
+      nightwatchOptions = { config: 'nightwatch.json', env: 'default' };
 
-  // Nightwatch always needs the 'env' options.
-  nightwatchOptions.env = 'default';
+  options = options || {};
 
   if (options.configFile) {
-    nightwatchOptions.config = path.resolve(options.configFile);
+    if (typeof options.configFile === 'string') {
+      nightwatchOptions.config = path.resolve(options.configFile);
+    } else {
+      throw new PluginError(PLUGIN_NAME, 'configFile option must be string');
+    }
   }
 
   if (options.cliArgs) {

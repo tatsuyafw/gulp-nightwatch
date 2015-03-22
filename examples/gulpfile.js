@@ -8,6 +8,11 @@ gulp.task('default', function() {
     }));
 });
 
+gulp.task('withNoOptions', function() {
+  gulp.src('')
+    .pipe(nightwatch());
+});
+
 gulp.task('withCliArgs:array', function() {
   gulp.src('')
     .pipe(nightwatch({
