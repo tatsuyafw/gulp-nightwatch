@@ -44,7 +44,7 @@ var nightwatchPlugin = function(options) {
   }
 
   function startNightwatch() {
-    gutil.log('Starting nigthwatch...');
+    gutil.log('Starting nightwatch...');
 
     child = spawn(
       'node',
