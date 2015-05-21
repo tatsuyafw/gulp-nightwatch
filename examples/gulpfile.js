@@ -31,3 +31,15 @@ gulp.task('withCliArgs:object', function() {
       }
     }));
 });
+
+gulp.task('withCliArgs:testcase', function() {
+  gulp.src('')
+    .pipe(nightwatch({
+      configFile: 'nightwatch.json',
+      cliArgs: {
+        test: 'tests/github',
+        testcase: "Demo: GitHub Title Test"
+      }
+      // or, cliArgs: [ '--test tests/github', '--testcase="Demo: GitHub Title Test"' ]
+    }));
+});
