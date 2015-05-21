@@ -2,7 +2,6 @@ module.exports = {
   'Demo: GitHub URL Test' : function (browser) {
     browser
       .url('https://github.com')
-      // .assert.title('GitHub')
       .assert.urlEquals('https://github.com/')
       .end();
   },
