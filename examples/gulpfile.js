@@ -43,3 +43,14 @@ gulp.task('withCliArgs:testcase', function() {
       // or, cliArgs: [ '--test tests/github', '--testcase="Demo: GitHub Title Test"' ]
     }));
 });
+
+gulp.task('withCliArgs:multi-env', function() {
+  gulp.src('')
+    .pipe(nightwatch({
+      configFile: 'nightwatch.json',
+      cliArgs: [ '--env chrome,default' ]
+    }));
+});
+
+gulp.task('all', ['default', 'withNoOptions', 'withCliArgs:array', 'withCliArgs:object',
+                  'withCliArgs:testcase', 'withCliArgs:multi-env']);
