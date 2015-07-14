@@ -8,7 +8,7 @@ First, install `gulp-nightwatch` as a development dependency:
 npm install --save-dev gulp-nightwatch
 ```
 
-Then, write your gulpfile.js as bellow.
+Then, write your gulpfile.js as below.
 
 ```javascript
 var gulp = require('gulp'),
@@ -22,7 +22,7 @@ gulp.task('default', function() {
 });
 ```
 
-You can pass Nightwatch command line options as Array using `cliArgs` option.
+You can pass command line options to Nightwatch as an array by using the option `cliArgs`.
 
 ```javascript
 gulp.task('nightwatch:chrome', function(){
@@ -34,7 +34,7 @@ gulp.task('nightwatch:chrome', function(){
 });
 ```
 
-You can also use Object for `cliArgs`.
+You may use an object instead, if you prefer.
 
 ```javascript
 gulp.task('nightwatch:chrome', function(){
