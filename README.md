@@ -28,7 +28,7 @@ You can pass command line options to Nightwatch as an array by using the option 
 gulp.task('nightwatch:chrome', function(){
   gulp.src('')
     .pipe(nightwatch({
-      configFile: 'test/nightwatch.json'
+      configFile: 'test/nightwatch.json',
       cliArgs: [ '--env chrome', '--tag sandbox' ]
     }));
 });
@@ -40,7 +40,7 @@ You may use an object instead, if you prefer.
 gulp.task('nightwatch:chrome', function(){
   gulp.src('')
     .pipe(nightwatch({
-      configFile: 'test/nightwatch.json'
+      configFile: 'test/nightwatch.json',
       cliArgs: {
         env: 'chrome',
         tag: 'sandbox'
@@ -57,14 +57,14 @@ gulp.task('nightwatch:chrome', function(){
 
 ##### configFile
 
-Type: `String`  
+Type: `String`
 Default: `nightwatch.json`
 
 The path to your Nightwatch config
 
 ##### cliArgs
 
-Type: `Array` or `Object`  
+Type: `Array` or `Object`
 Default: null
 
 Command line options for Nightwatch
