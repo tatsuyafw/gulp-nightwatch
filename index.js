@@ -1,6 +1,6 @@
 'use strict';
 
-var es = require('event-stream');
+var through2 = require('through2');
 var gutil = require('gulp-util');
 var helper = require('./lib/helper');
 var path = require('path');
@@ -9,10 +9,9 @@ var PluginError = gutil.PluginError;
 
 var PLUGIN_NAME = 'gulp-nightwatch';
 
-var nightwatchPlugin = function(options) {
+module.exports = function(options) {
   var child,
       stream,
-      files = [],
       nightwatchOptions = { config: 'nightwatch.json', env: 'default' };
 
   options = options || {};
@@ -60,27 +59,17 @@ var nightwatchPlugin = function(options) {
     child.on('exit', function(code) {
       done(code);
     });
-
   }
 
-  function queueFile(file) {
-    gutil.log("log file");
-    if (file) {
-      files.push(file.path);
+  stream = through2.obj(
+    function(chunk, enc, cb) {
+      cb(null, chunk);
+    },
+    function(cb) {
+      startNightwatch();
+      cb();
     }
-  }
-
-  function endStream() {
-    if (files.length) {
-      options.files = files;
-    }
-
-    startNightwatch();
-  }
-
-  stream = es.through(queueFile, endStream);
+  );
   return stream;
 
 };
-
-module.exports = nightwatchPlugin;
