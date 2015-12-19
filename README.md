@@ -1,4 +1,4 @@
-# gulp-nightwatch [![Build Status](https://travis-ci.org/tatsuyafw/gulp-nightwatch.svg?branch=master)](https://travis-ci.org/tatsuyafw/gulp-nightwatch)
+# gulp-nightwatch [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 ## Usage
 
@@ -68,3 +68,9 @@ Type: `Array` or `Object`
 Default: null
 
 Command line options for Nightwatch
+
+
+[npm-image]: https://img.shields.io/npm/v/gulp-nightwatch.svg
+[npm-url]: https://www.npmjs.com/package/gulp-nightwatch
+[travis-image]: https://img.shields.io/travis/tatsuyafw/gulp-nightwatch.svg
+[travis-url]: https://travis-ci.org/tatsuyafw/gulp-nightwatch
