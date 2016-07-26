@@ -8,7 +8,7 @@ module.exports = {
   'Demo: GitHub Title Test' : function (browser) {
     browser
       .url('https://github.com')
-      .assert.title('GitHub · Where software is built')
+      .assert.title('How people build software · GitHub')
       .end();
   }
 };
