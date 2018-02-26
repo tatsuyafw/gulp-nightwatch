@@ -1,6 +1,6 @@
 var nightwatchPlugin = require('../');
 var expect = require('chai').expect;
-var PluginError = require('gulp-util').PluginError;
+var PluginError = require('plugin-error');
 require('mocha');
 
 describe('gulp-nightwatch', function() {
