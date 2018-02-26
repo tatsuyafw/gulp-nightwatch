@@ -1,11 +1,11 @@
 'use strict';
 
 var es = require('event-stream');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
 var helper = require('./lib/helper');
 var path = require('path');
 var spawn = require('child_process').spawn;
-var PluginError = gutil.PluginError;
+var PluginError = require('plugin-error');
 
 var PLUGIN_NAME = 'gulp-nightwatch';
 
@@ -44,7 +44,7 @@ var nightwatchPlugin = function(options) {
   }
 
   function startNightwatch() {
-    gutil.log('Starting nightwatch...');
+    log('Starting nightwatch...');
 
     child = spawn(
       'node',
@@ -64,7 +64,7 @@ var nightwatchPlugin = function(options) {
   }
 
   function queueFile(file) {
-    gutil.log("log file");
+    log("log file");
     if (file) {
       files.push(file.path);
     }
