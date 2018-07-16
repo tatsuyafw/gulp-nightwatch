@@ -1,6 +1,6 @@
 {
   "name": "gulp-nightwatch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gulp plugin for Nightwatch.js",
   "main": "index.js",
   "scripts": {
