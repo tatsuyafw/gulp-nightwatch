@@ -1,6 +1,6 @@
 'use strict';
 
-var through2 = require('through2')
+var through = require('through');
 var log = require('fancy-log');
 var helper = require('./lib/helper');
 var path = require('path');
@@ -78,7 +78,7 @@ var nightwatchPlugin = function(options) {
     startNightwatch();
   }
 
-  stream = through2(queueFile, endStream);
+  stream = through(queueFile, endStream);
   return stream;
 
 };
