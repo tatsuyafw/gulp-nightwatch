@@ -64,7 +64,6 @@ var nightwatchPlugin = function(options) {
   }
 
   function queueFile(file) {
-    log("log file");
     if (file) {
       files.push(file.path);
     }
