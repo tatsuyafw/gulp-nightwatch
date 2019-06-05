@@ -34,12 +34,14 @@ var nightwatchPlugin = function(options) {
       child.kill();
     }
 
-    if (stream) {
+    if(options.abortOnFailure === true && stream) {
       if (code) {
         stream.emit('error', new PluginError(PLUGIN_NAME, 'nightwatch exited with code ' + code));
       } else {
         stream.emit('end');
       }
+    } else {
+      stream.emit('end');
     }
   }
 
